@@ -63,12 +63,12 @@ const useStyles = makeStyles((theme) => ({
         padding: 0,
         margin: '0 0 1em 0'
     },
-    form: { 
-        display: 'flex', 
-        width: '100%', 
-        flexDirection: 'column', 
-        alignItems: 'center', 
-        justifyContent: 'space-between' 
+    form: {
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'space-between'
     }
 }))
 
@@ -96,7 +96,7 @@ const App = () => {
         }
 
         //clean up not neccessary
-        return () => {}
+        return () => { }
     }, [])
 
     //on apiResponse updated
@@ -105,7 +105,7 @@ const App = () => {
             //clear apiResponse after 2 seconds
             setApiResponse(null)
         }, 5000)
-        
+
         //clean up
         return () => {
             //clear timeout if it has not already finished
@@ -132,7 +132,7 @@ const App = () => {
                 status: 'success'
             });
         }
-        
+
         setLoading(false);
     }
 
@@ -150,7 +150,7 @@ const App = () => {
                 )
             }
             <AppBar variant="elevation" position="static" className={classes.appBar}>
-                <h2>FirePi</h2>
+                <h2>QuestPi</h2>
             </AppBar>
             <Container maxWidth={'xs'}>
                 <Grid item xs={12}>
@@ -166,23 +166,23 @@ const App = () => {
                         )
                     }
                     <section className={classes.mb1}>
-                    <div className={classes.logoArea}>
-                        <img className={classes.logoImg} width="50" src="https://cdn.freebiesupply.com/logos/large/2x/firebase-1-logo-png-transparent.png"/>
-                        <span>+</span>
-                        <img className={classes.logoImg} height="50" src="https://minepi.com/assets/logo-667cd4f63cb2e6f261e16560dea7ac9c9235dcfaf9a285274a576efc96b9ec79.png"/>
-                        <span>+</span>
+                        <div className={classes.logoArea}>
+                            <img className={classes.logoImg} width="50" src="https://cdn.freebiesupply.com/logos/large/2x/firebase-1-logo-png-transparent.png" />
+                            <span>+</span>
+                            <img className={classes.logoImg} height="50" src="https://minepi.com/assets/logo-667cd4f63cb2e6f261e16560dea7ac9c9235dcfaf9a285274a576efc96b9ec79.png" />
+                            <span>+</span>
 
-                        <img className={classes.logoImg} height="50" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K"/>
-                    </div>  
+                            <img className={classes.logoImg} height="50" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" />
+                        </div>
                         <p>A simple boilerplate for building React Pi Network web apps that run on Firebase (Google cloud platform)</p>
-                        <p>FirePi bundles the below list of technologies:</p>
+                        <p>Questpi bundles the below list of technologies:</p>
                         <ul className={classes.linkList}>
                             <li><a target="_blank" href="https://firebase.google.com">Firebase</a> (<a target="_blank" href="https://firebase.google.com/docs">documentation</a>)</li>
                             <li><a target="_blank" href="https://minepi.com">Pi Network</a> (<a target="_blank" href="https://github.com/pi-apps/pi-platform-docs">documentation</a>)</li>
                             <li><a target="_blank" href="https://reactjs.org">React</a></li>
                             <li><a target="_blank" href="https://material-ui.com">Material UI</a></li>
                         </ul>
-                        <p className={classes.mb1}>You can view the full repository for this code here: <a target="_blank" href="https://github.com/QuestPi/Backend">FirePi</a></p>
+                        <p className={classes.mb1}>You can view the full repository for this code here: <a target="_blank" href="https://github.com/QuestPi/Backend">questpi</a></p>
 
                     </section>
                     <hr className={classes.mb1} />
@@ -190,7 +190,7 @@ const App = () => {
                         <div style={{ margin: '0 0 1em' }}>
                             <Typography>Test Payment</Typography>
                         </div>
-                        
+
                         {
                             apiResponse && (
                                 <div className={classes.mb1}>
@@ -205,11 +205,11 @@ const App = () => {
                             <Button variant="text" fullWidth type="submit">Transfer</Button>
                         </form>
                     </Paper>
-                     
+
                 </Grid>
             </Container>
         </Fragment>
-        
+
     )
 }
 
