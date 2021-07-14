@@ -1,8 +1,8 @@
 Auth Flow
 
-By Following https://github.com/dannybutterfield1880/fire-pi-base & https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#authentication
+By Following https://github.com/QuestPi/Backend & https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md#authentication
 
-(Step 1 A - C are provided from the tutorial/Fire-Pi-Base --> Images below)
+(Step 1 A - C are provided from the tutorial/Backend --> Images below)
 1.A Connect to PI
 1.B Pop up confirmation/access screen
 1.C User clicks allow (if pi-app/browser on phone process complete else send to respective download - apple store/google play)

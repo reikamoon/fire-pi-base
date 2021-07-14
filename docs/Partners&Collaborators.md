@@ -70,20 +70,20 @@ Support: https://pi.app/support
 - [Discord](https://discord.gg/hC78rPGJxH)
 - [GitHub]()
 
-- dannyb95 --> Dev for the Fire-Pi-Base we may be using for setup configuration for cross platform
+- dannyb95 --> Dev for the Backend we may be using for setup configuration for cross platform
     --> also mentioned The Pi Lifestyle to me as competiotion/others with a similar setup but further along
 
 
 ## dannyb95 Projects
 
-- [Fire-Pi-Base](https://firepi-react.web.app/)
+- [Backend](https://questpi.web.app/)
 - [WordPress-Emporium](https://pi-emporium.com/)
 - 
 - [Discord]()
-- [GitHub1](https://github.com/dannybutterfield1880/fire-pi-base)
-- [GitHub2](https://github.com/dannybutterfield1880/PiPayments)
-- [GitHub3](https://github.com/dannybutterfield1880/PiWoo)
-- [GitHub4](https://github.com/dannybutterfield1880/PiWooTheme)
+- [GitHub1](https://github.com/QuestPi/Backend)
+- [GitHub2](https://github.com/QuestPi/PiPayments)
+- [GitHub3](https://github.com/QuestPi/PiWoo)
+- [GitHub4](https://github.com/QuestPi/PiWooTheme)
 
 ## Other Resources
 
