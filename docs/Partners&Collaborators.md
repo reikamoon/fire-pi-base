@@ -7,6 +7,12 @@ Support: https://pi.app/support
 # !! Quest & All Partners, Collaborators, or Affiliates are not officially linked to the Pi network, this server is created and maintained by and for developers of the Pi network.
 
 
+https://www.reddit.com/r/PiNetwork/wiki/devresources
+https://github.com/pi-apps/pi-platform-docs/issues/11#issuecomment-871317481
+https://github.com/pi-apps/pi-platform-docs/issues/42#issuecomment-873444893
+https://github.com/pi-apps/pi-platform-docs/issues/42#issuecomment-873455289
+https://github.com/pi-apps/pi-platform-docs/issues/42#issuecomment-873680752
+
 
 ## The Pi Lifestyle
 
