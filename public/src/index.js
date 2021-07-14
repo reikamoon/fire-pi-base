@@ -10,7 +10,7 @@ const isDev = process.env.NODE_ENV === 'development';
 window.isDev = isDev;
 
 // window.PiMockConfig = {
-//     production_domain: isDev ? false : 'https://firepi-react.web.app',
+//     production_domain: isDev ? false : 'https://questpi.web.app',
 //     debug: isDev,
 //     username: 'john_doe',
 //     uid: '12345678-1234-414e-b578-42e89d1f3c02',
@@ -182,7 +182,7 @@ const App = () => {
                             <li><a target="_blank" href="https://reactjs.org">React</a></li>
                             <li><a target="_blank" href="https://material-ui.com">Material UI</a></li>
                         </ul>
-                        <p className={classes.mb1}>You can view the full repository for this code here: <a target="_blank" href="https://github.com/dannybutterfield1880/fire-pi-base">FirePi</a></p>
+                        <p className={classes.mb1}>You can view the full repository for this code here: <a target="_blank" href="https://github.com/QuestPi/Backend">FirePi</a></p>
 
                     </section>
                     <hr className={classes.mb1} />

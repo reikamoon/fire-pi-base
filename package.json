@@ -1,7 +1,7 @@
 {
-  "name": "fire-pi",
+  "name": "questpi",
   "version": "1.0.0",
-  "description": "Boilerplate for creating Pi Network web apps running on the Firebase platform",
+  "description": "",
   "main": "public/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,16 +11,28 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dannybutterfield1880/fire-pi-base.git"
+    "url": "git+https://github.com/QuestPi/Backend.git"
   },
   "keywords": [
     "firebase",
-    "pinetwork"
+    "Firebase",
+    "Pi-Network",
+    "PiNetwork",
+    "pinetwork",
+    "Quest",
+    "quest",
+    "pi",
+    "PI",
+    "network",
+    "Network"
   ],
-  "author": "Danny Butterfield",
+  "author": "QuestPi Team",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dannybutterfield1880/fire-pi-base/issues"
+    "url": "https://github.com/QuestPi/Backend/issues"
   },
-  "homepage": "https://github.com/dannybutterfield1880/fire-pi-base#readme"
+  "homepage": "https://github.com/QuestPi/Backend#Readme",
+  "dependencies": {
+    "webpack": "^5.44.0"
+  }
 }
