@@ -9,7 +9,7 @@ import Logo from '../images/quest-pi-transparent-clean.png';
 
 import Navigation from './Navigation';
 
-// import { SignUpPage, SignInPage, PasswordForgetPage } from './Auth';
+import { SignUpPage, SignInPage, PasswordForgetPage } from './Auth';
 
 import {
   LandingPage,
@@ -40,14 +40,15 @@ const App = () => (
           {(authUser) =>
             authUser ? (
               <Switch>
-                {/* <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
+                <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 
                 {/* <Route path={ROUTES.ADMIN} component={AdminPage} />
                 <Route path={ROUTES.ACCOUNT} component={AccountPage} />
                 <Route path={ROUTES.COMPANIES} component={CompaniesPage} /> */}
 
                 <Route exact path={ROUTES.HOME}>
-                  <Redirect to={ROUTES.LANDING} />
+                  <Purchase />
+                  {/* <Redirect to={ROUTES.LANDING} /> */}
                   {/* <HomePage /> */}
                 </Route>
                 <Route exact path={ROUTES.LANDING}>
@@ -65,16 +66,14 @@ const App = () => (
             ) : (
               <Switch>
                 <Route exact path={ROUTES.LANDING} component={LandingPage} />
-                {/* <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} /> */}
-                {/* <Route exact path={ROUTES.SIGN_IN} component={SignInPage} /> */}
-                {/* <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} /> */}
+                <Route exact path={ROUTES.SIGN_UP} component={SignUpPage} />
+                <Route exact path={ROUTES.SIGN_IN} component={SignInPage} />
+                <Route exact path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
 
                 <Route path={ROUTES.HOME}>
-                  {/* <Redirect to={ROUTES.SIGN_IN} /> */}
-                  <Purchase />
+                  <Redirect to={ROUTES.SIGN_IN} />
                 </Route>
 
-                <Route path={ROUTES.NOT_FOUND} component={NotFoundPage} />
                 {/*
                 <Route path={ROUTES.ADMIN}>
                   <Redirect to={ROUTES.SIGN_IN} />
@@ -86,6 +85,7 @@ const App = () => (
                   <Redirect to={ROUTES.SIGN_IN} />
                 </Route>
                 */}
+                <Route path={ROUTES.NOT_FOUND} component={NotFoundPage} />
               </Switch>
             )
           }
