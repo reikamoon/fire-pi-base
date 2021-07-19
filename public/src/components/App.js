@@ -17,7 +17,7 @@ import {
   // CompaniesPage
 } from './Displays';
 
-// import PromptSaveBookmark from './Utils/PromptSaveBookmark';
+import PromptSaveBookmark from './Utils/PromptSaveBookmark';
 
 const App = () => (
   <Router>
@@ -88,7 +88,7 @@ const App = () => (
           }
         </AuthUserContext.Consumer>
 
-        {/* <PromptSaveBookmark /> */}
+        <PromptSaveBookmark />
         <Navigation />
       </div>
     </div>
