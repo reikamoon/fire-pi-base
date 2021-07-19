@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HOME } from '../../routes';
-import Logo from '../images/quest-pi-transparent-vector.png';
+import Logo from '../../images/quest-pi-transparent-vector.png';
 
 const LandingPage = () => (
   <div className="container landing-container">
