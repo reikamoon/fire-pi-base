@@ -47,7 +47,8 @@ const Navigation = () => (
                       role="tab"
                       aria-controls="nav-buildings"
                       aria-selected="false"
-                      to={{pathname: `${ROUTES.COMPANIES}`
+                      to={{
+                        pathname: `${ROUTES.COMPANIES}`
                         // pathname: `${ROUTES.COMPANIES}/${authUser.company_id}`,
                         // state: { company },
                       }}

@@ -52,24 +52,24 @@ class PasswordChangeForm extends Component {
           placeholder="Email Address"
         />
         <div className="form-row">
-        <input
-          className="form-input"
-          name="passwordOne"
-          autoComplete="new-password"
-          value={passwordOne}
-          onChange={this.onChange}
-          type="password"
-          placeholder="New Password"
-        />
-        <input
-          className="form-input "
-          name="passwordTwo"
-          autoComplete="new-password"
-          value={passwordTwo}
-          onChange={this.onChange}
-          type="password"
-          placeholder="Confirm New Password"
-        />
+          <input
+            className="form-input"
+            name="passwordOne"
+            autoComplete="new-password"
+            value={passwordOne}
+            onChange={this.onChange}
+            type="password"
+            placeholder="New Password"
+          />
+          <input
+            className="form-input "
+            name="passwordTwo"
+            autoComplete="new-password"
+            value={passwordTwo}
+            onChange={this.onChange}
+            type="password"
+            placeholder="Confirm New Password"
+          />
         </div>
         <button className="btn btn-danger" disabled={isInvalid} type="submit">
           Reset Password

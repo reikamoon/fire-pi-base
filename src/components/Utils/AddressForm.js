@@ -10,8 +10,8 @@ class AddressForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {result: ""};
-    };
+    this.state = { result: "" };
+  };
 
   sendBackData = () => {
     var address = this.state.result.value;

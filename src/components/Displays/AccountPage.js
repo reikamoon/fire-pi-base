@@ -9,11 +9,12 @@ import {
   withEmailVerification,
 } from '../Session';
 
-import { PasswordForgetForm, PasswordChangeForm, SignOutButton} from '../Auth';
+// import { PasswordForgetForm, PasswordChangeForm, SignOutButton} from '../Auth';
+import { PasswordChangeForm, SignOutButton } from '../Auth';
 import { JoinCompanyForm, ToggleSwitch } from '../Utils';
 
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const AccountPage = () => {

@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../routes';
 
-import Logo from '../../images/minerva-transparent-vector.png';
+import Logo from '../../images/quest-pi-transparent-vector.png';
 
 const PasswordForgetPage = () => (
   <div className="page-bg">
@@ -56,7 +56,7 @@ class PasswordForgetFormBase extends Component {
     const isInvalid = email === '';
 
     return (
-      
+
       <form onSubmit={this.onSubmit}>
         <input
           className="form-input"
@@ -67,15 +67,15 @@ class PasswordForgetFormBase extends Component {
           type="text"
           placeholder="Email Address"
         />
-        <button 
-        className="btn btn-secondary btn-social"
-        disabled={isInvalid} type="submit">
+        <button
+          className="btn btn-secondary btn-social"
+          disabled={isInvalid} type="submit">
           Reset Password
         </button>
 
         {error && <p>{error.message}</p>}
       </form>
-      
+
     );
   }
 }

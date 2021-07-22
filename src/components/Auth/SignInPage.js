@@ -9,7 +9,7 @@ import * as ROUTES from '../../routes';
 import { faFacebookF, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Logo from '../../images/minerva-transparent-vector.png';
+import Logo from '../../images/quest-pi-transparent-vector.png';
 
 const SignInPage = () => (
   <div className="page-bg">

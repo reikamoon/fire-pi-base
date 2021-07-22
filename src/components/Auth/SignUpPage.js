@@ -6,7 +6,7 @@ import { SignInLink } from './SignInPage';
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../../routes';
 
-import Logo from '../../images/minerva-transparent-vector.png';
+import Logo from '../../images/quest-pi-transparent-vector.png';
 
 const SignUpPage = () => (
   <div className="page-bg">
@@ -97,7 +97,7 @@ class SignUpFormBase extends Component {
       email,
       passwordOne,
       passwordTwo,
-      isAdmin,
+      // isAdmin,
       error,
     } = this.state;
 
@@ -110,8 +110,7 @@ class SignUpFormBase extends Component {
     return (
       <form onSubmit={this.onSubmit}>
         <input
-                    className="form-input"
-
+          className="form-input"
           name="username"
           autoComplete="username"
           value={username}
@@ -120,8 +119,7 @@ class SignUpFormBase extends Component {
           placeholder="Full Name"
         />
         <input
-                  className="form-input"
-
+          className="form-input"
           name="email"
           autoComplete="email"
           value={email}
@@ -130,8 +128,7 @@ class SignUpFormBase extends Component {
           placeholder="Email Address"
         />
         <input
-                  className="form-input"
-
+          className="form-input"
           name="passwordOne"
           autoComplete="new-password"
           value={passwordOne}
@@ -140,8 +137,7 @@ class SignUpFormBase extends Component {
           placeholder="Password"
         />
         <input
-                  className="form-input"
-
+          className="form-input"
           name="passwordTwo"
           autoComplete="new-password"
           value={passwordTwo}
@@ -158,9 +154,9 @@ class SignUpFormBase extends Component {
             onChange={this.onChangeCheckbox}
           />
         </label> */}
-        <button 
-        className="btn btn-primary"
-        disabled={isInvalid} type="submit">
+        <button
+          className="btn btn-primary"
+          disabled={isInvalid} type="submit">
           Sign Up
         </button>
 
@@ -172,9 +168,9 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <span className="cta">
-  <p>Don't have an account?</p> 
+    <p>Don't have an account?</p>
     <p><Link to={ROUTES.SIGN_UP} className="highlight-link">Sign Up</Link>
-  </p>
+    </p>
   </span>
 );
 

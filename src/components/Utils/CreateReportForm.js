@@ -14,12 +14,12 @@ class ReportForm extends Component {
       upload: null,
       progress: 0,
 
-      
+
       companyID: '',
       buildingID: '',
       floorID: '',
       roomID: '',
-      
+
       reportTitle: '',
       reportMessage: '',
       reportStatus: 'OPEN',
@@ -163,7 +163,7 @@ class ReportForm extends Component {
             />
           </div>
 
-          {process.env.NODE_ENV !== 'production' && 
+          {process.env.NODE_ENV !== 'production' &&
             <div className="btn btn-primary form-input" onClick={this.onAutoFill}>
               Auto Fill Location
             </div>
@@ -199,7 +199,7 @@ class ReportForm extends Component {
             <option value="SERVICE">Service Report</option>
           </select>
 
-          
+
           <input className="file-uploader" type="file" onChange={this.handleChange} />
 
           <p className='text-center'>

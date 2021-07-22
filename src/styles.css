@@ -115,7 +115,7 @@ nav {
 
 .usercard {
   background-color: #bebebe;
-  background-image: url('../src/images/trianglify-lowres.png');
+  background-image: url("../src/images/trianglify-lowres.png");
   background-size: 150%;
   background-attachment: fixed;
   background-position: top;
@@ -196,7 +196,7 @@ nav {
 }
 /* Image for Parallax Home Section */
 .paralsec {
-  background-image: url('https://img.webnots.com/2017/05/parallax.jpg');
+  background-image: url("https://img.webnots.com/2017/05/parallax.jpg");
 }
 .progress {
   width: auto !important;
@@ -355,7 +355,7 @@ p.comp-item.report-desc {
 .landing-container {
   height: 100vh;
   width: 100vw;
-  background-image: url('../src/images/landing.gif');
+  background-image: url("../src/images/landing.gif");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -382,7 +382,7 @@ p.comp-item.report-desc {
 }
 
 .square:after {
-  content: '';
+  content: "";
   display: block;
   padding-bottom: 100%;
 }

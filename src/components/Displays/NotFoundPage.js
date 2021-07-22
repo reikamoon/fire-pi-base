@@ -9,7 +9,7 @@ class NotFoundPage extends Component {
         <h1>Oops!</h1>
         <h2>We can't find the page you're looking for.</h2>
         <p>
-          <Link to={HOME}><button className="btn btn-secondary">Go to Home Kid</button></Link>
+          <Link to={HOME}><button className="btn btn-secondary">Go Home</button></Link>
         </p>
       </div>
     );
