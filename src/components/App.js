@@ -25,8 +25,8 @@ import PromptSaveBookmark from './Utils/PromptSaveBookmark';
 
 const App = () => (
   <Router>
-    {/* <div>
-      <div className="hidden text-center">
+    <div>
+      {/* <div className="hidden text-center">
         <div className="row desktop-banner">
           <div className="col">
             <img className="littler-square" alt="logo" src={Logo} />
