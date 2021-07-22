@@ -19,53 +19,24 @@
       <img alt="GitHub issues" longdesc="GitHub issues" src="https://img.shields.io/github/issues/QuestPi/Backend.svg?style=social&label=Issues&maxAge=2592000" />
     </a>
   </p>
+  <br />
+  <h1>Quest</h1>
 </div>
 
+<p align="center">
+  <strong style="color: red;">❌&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOTE OF WARNING&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❌</strong>
+  <br>
+  Quest & All Partners, Collaborators, or Affiliates are not officially linked to the Pi network, this server is created and maintained by and for developers of the Pi network.
+  <!-- <br> -->
+  <!-- <b>Carefully</b> follow the instructions <a href="Docs/Instructions.md">Here</a> to ensure your contributions are tracked correctly. -->
+</p>
 
-
-# QuestPi
+# Getting Started Quest
 
 ## :memo: What is QuestPi?
-<b>QuestPi</b> is ---------<br>
+
+<b>QuestPi</b> is a platform for Pioneers to discover businesses, grocery stores, salons, malls, etc near them that accept PI for payment<br>
 [Read More...](https://QuestPi.co/)
-
-## :memo: What is SocialChain / The Pi Network?
-
-- [Website](https://minepi.com/)
-- [Node](https://node.minepi.com)
-- [Developer](https://developers.minepi.com)
-- [Wiki](https://pi.app/wiki)
-- [Support](https://pi.app/support)
----
-- [SocialChain Terms of Service](https://socialchain.app/tos)
-- [SocialChain Privacy Policy](https://socialchain.app/privacy)
-- [SocialChain Developer Terms](https://socialchain.app/developer_terms)
----
-- [Pi Testnet API](https://api.testnet.minepi.com/)
-- [JavaScript SDK](https://github.com/pi-apps/pi-platform-docs)
-- [pi-node-docker - or - Stellar quickstart docker image](https://github.com/PiCoreTeam/pi-node-docker)
-- [Stellar API Introduction](https://developers.stellar.org/api/introduction/)
-
-
-## :hammer: Built With...
-
-- [gradosevic/pi-mock](https://github.com/gradosevic/pi-mock)
-- [dannybutterfield1880/fire-pi-base](https://github.com/dannybutterfield1880/fire-pi-base)
-
-<!--
-## Resources
-
-#### !! Quest & All Partners, Collaborators, or Affiliates are not officially linked to the Pi network, this server is created and maintained by and for developers of the Pi network.
- -->
-
-
-
-
-# Getting Started QuestPi
-
-<p>
-  <b></b>
-</p>
 
 ## 🛠️ Built With
 
@@ -73,6 +44,8 @@ Please skim through these links to understand how this project is built.
 
 - [Create React App](https://github.com/facebook/create-react-app).
 - React Firebase Authentication [Tutorial](https://www.robinwieruch.de/complete-firebase-authentication-react-tutorial) & [Repo](https://github.com/the-road-to-react-with-firebase/react-firebase-authentication.git)
+- [dannybutterfield1880/fire-pi-base](https://github.com/dannybutterfield1880/fire-pi-base)
+- [gradosevic/pi-mock](https://github.com/gradosevic/pi-mock)
 
 ### Features
 
@@ -94,6 +67,11 @@ Please skim through these links to understand how this project is built.
   - Auth Persistence with Local Storage
   - Database with Users and Reports
 
+!!! ADD PI-SDK FEATURES HERE !!!
+https://github.com/pi-apps/pi-platform-docs/blob/master/SDK_reference.md
+
+!!! ADD Google Maps FEATURES HERE !!!
+
 ## :pencil: License
 
 This project is not currently licensed
@@ -103,6 +81,27 @@ This project is not currently licensed
 ## :writing_hand: Contributing Authors
 
 Before continuing you need to understand the difference between a contributor and a collaborator.\
-Anyone is welcome to contribute!
+Please reffer to our [Code of Conduct]() & [Contributing Instructions](). Anyone is welcome to contribute!
 
 ## :book: EXTRA RESOURCES/Acknowledgments :pray:
+
+### :memo: What is SocialChain / The Pi Network?
+
+- [Website](https://minepi.com/)
+- [Node](https://node.minepi.com)
+- [Developer](https://developers.minepi.com)
+- [Wiki](https://pi.app/wiki)
+- [Support](https://pi.app/support)
+
+---
+
+- [SocialChain Terms of Service](https://socialchain.app/tos)
+- [SocialChain Privacy Policy](https://socialchain.app/privacy)
+- [SocialChain Developer Terms](https://socialchain.app/developer_terms)
+
+---
+
+- [Pi Testnet API](https://api.testnet.minepi.com/)
+- [JavaScript SDK](https://github.com/pi-apps/pi-platform-docs)
+- [pi-node-docker - or - Stellar quickstart docker image](https://github.com/PiCoreTeam/pi-node-docker)
+- [Stellar API Introduction](https://developers.stellar.org/api/introduction/)
