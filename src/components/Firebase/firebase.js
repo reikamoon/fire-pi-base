@@ -33,9 +33,9 @@ class Firebase {
     this.performance = app.performance();
 
     /* Social Sign In Method Provider */
-    this.googleProvider = new app.auth.GoogleAuthProvider();
-    this.facebookProvider = new app.auth.FacebookAuthProvider();
-    this.twitterProvider = new app.auth.TwitterAuthProvider();
+    // this.googleProvider = new app.auth.GoogleAuthProvider();
+    // this.facebookProvider = new app.auth.FacebookAuthProvider();
+    // this.twitterProvider = new app.auth.TwitterAuthProvider();
   }
 
   // *** Auth API ***
@@ -76,7 +76,7 @@ class Firebase {
   doSendEmailVerification = () => {
     this.analytics.logEvent('Email Verification Sent');
     return this.auth.currentUser.sendEmailVerification({
-      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT || 'http://localhost:8080/',
+      url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT || 'http://localhost:3000/',
     });
   };
 
