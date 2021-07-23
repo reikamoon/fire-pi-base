@@ -10,4 +10,6 @@ import FloorsPage from './Floors';
 import RoomsPage from './Rooms';
 import ReportsPage from './Reports';
 
-export { AccountPage, AdminPage, LandingPage, NotFoundPage, CompaniesPage, BuildingsPage, FloorsPage, RoomsPage, ReportsPage };
+import PI_PURCHASE from './pi-purchase';
+
+export { AccountPage, AdminPage, LandingPage, NotFoundPage, CompaniesPage, BuildingsPage, FloorsPage, RoomsPage, ReportsPage, PI_PURCHASE };

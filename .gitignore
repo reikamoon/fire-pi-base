@@ -80,3 +80,5 @@ yarn.lock
 .DS_Store
 db.jsonc
 .eslintcache
+
+validation-key.txt

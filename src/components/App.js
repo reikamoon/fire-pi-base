@@ -17,6 +17,7 @@ import {
   FloorsPage,
   RoomsPage,
   ReportsPage,
+  PI_PURCHASE,
 } from './Displays';
 
 const App = () => (
@@ -48,6 +49,9 @@ const App = () => (
                 <Route path={ROUTES.ROOMS} component={RoomsPage} />
                 <Route path={ROUTES.REPORTS} component={ReportsPage} />
 
+                <Route exact path={ROUTES.PI_PURCHASE}>
+                  <PI_PURCHASE />
+                </Route>
                 <Route exact path={ROUTES.HOME}>
                   <Redirect to={ROUTES.REPORTS} />
                   {/* <HomePage /> */}

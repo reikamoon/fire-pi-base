@@ -1,10 +1,10 @@
 import React, { useState, useEffect, Fragment } from 'react'
-import { render } from 'react-dom'
+// import { render } from 'react-dom'
 import { createPiPayment, authenticatePiUser, openPiShareDialog } from '../services/pi';
 import { makeStyles, Button, Container, Grid, TextField, CircularProgress, Typography, Paper, AppBar } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 
-//import './pi-mock';
+// import '../services/pi-mock';
 
 const isDev = process.env.NODE_ENV === 'development';
 window.isDev = isDev;
@@ -167,22 +167,22 @@ const App = () => {
                     }
                     <section className={classes.mb1}>
                         <div className={classes.logoArea}>
-                            <img className={classes.logoImg} width="50" src="https://cdn.freebiesupply.com/logos/large/2x/firebase-1-logo-png-transparent.png" />
+                            <img className={classes.logoImg} width="50" alt="Firebase Logo" src="https://cdn.freebiesupply.com/logos/large/2x/firebase-1-logo-png-transparent.png" />
                             <span>+</span>
-                            <img className={classes.logoImg} height="50" src="https://minepi.com/assets/logo-667cd4f63cb2e6f261e16560dea7ac9c9235dcfaf9a285274a576efc96b9ec79.png" />
+                            <img className={classes.logoImg} height="50" alt="Pi-Network Logo" src="https://minepi.com/assets/logo-667cd4f63cb2e6f261e16560dea7ac9c9235dcfaf9a285274a576efc96b9ec79.png" />
                             <span>+</span>
 
-                            <img className={classes.logoImg} height="50" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" />
+                            <img className={classes.logoImg} height="50" alt="React Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" />
                         </div>
                         <p>A simple boilerplate for building React Pi Network web apps that run on Firebase (Google cloud platform)</p>
                         <p>Questpi bundles the below list of technologies:</p>
                         <ul className={classes.linkList}>
-                            <li><a target="_blank" href="https://firebase.google.com">Firebase</a> (<a target="_blank" href="https://firebase.google.com/docs">documentation</a>)</li>
-                            <li><a target="_blank" href="https://minepi.com">Pi Network</a> (<a target="_blank" href="https://github.com/pi-apps/pi-platform-docs">documentation</a>)</li>
-                            <li><a target="_blank" href="https://reactjs.org">React</a></li>
-                            <li><a target="_blank" href="https://material-ui.com">Material UI</a></li>
+                            <li><a target="_blank" rel="noreferrer" href="https://firebase.google.com">Firebase</a> (<a target="_blank" rel="noreferrer" href="https://firebase.google.com/docs">documentation</a>)</li>
+                            <li><a target="_blank" rel="noreferrer" href="https://minepi.com">Pi Network</a> (<a target="_blank" rel="noreferrer" href="https://github.com/pi-apps/pi-platform-docs">documentation</a>)</li>
+                            <li><a target="_blank" rel="noreferrer" href="https://reactjs.org">React</a></li>
+                            <li><a target="_blank" rel="noreferrer" href="https://material-ui.com">Material UI</a></li>
                         </ul>
-                        <p className={classes.mb1}>You can view the full repository for this code here: <a target="_blank" href="https://github.com/QuestPi/Backend">questpi</a></p>
+                        <p className={classes.mb1}>You can view the full repository for this code here: <a target="_blank" rel="noreferrer" href="https://github.com/QuestPi/Backend">questpi</a></p>
 
                     </section>
                     <hr className={classes.mb1} />

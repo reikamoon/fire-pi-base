@@ -7,6 +7,7 @@ export const authenticatePiUser = async () => {
     const scopes = ['payments'];
     
     try{
+        console.log("\nAttempting to Authenticate Pioneer\nLines 5-15 src/components/services/pi.js\n\n")
         return await Pi.authenticate(scopes, onIncompletePaymentFound);
     } catch(err) {
         console.log(err)
@@ -38,7 +39,7 @@ export const onReadyForApproval = async (paymentId, paymentConfig) => {
 
     if (status === 500) {
         //there was a problem approving this payment show user body.message from server
-        alert(`${body.status}: ${body.message}`);
+        // alert(`${body.status}: ${body.message}`);
         return false;
     } 
 

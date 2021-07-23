@@ -38,11 +38,11 @@ Pi.authenticate = function (scopes, onOpenPaymentFound) {
     return new Promise((resolve, reject) => {
         resolve({
             "user":
-                {
-                    "username": PiMockConfig.username || 'john_doe',
-                    "uid": PiMockConfig.uid || uuidv4(),
-                    "roles": ["email_verified"]
-                }, "accessToken": "1234567-1234567890AX31-1234567890aN10zfuoCE"
+            {
+                "username": PiMockConfig.username || 'john_doe',
+                "uid": PiMockConfig.uid || uuidv4(),
+                "roles": ["email_verified"]
+            }, "accessToken": "1234567-1234567890AX31-1234567890aN10zfuoCE"
         });
     });
 }

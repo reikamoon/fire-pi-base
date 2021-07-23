@@ -28,6 +28,17 @@ const Navigation = () => (
                 </Link>
                 <Link
                   className="nav-item nav-link"
+                  id="nav-home-tab"
+                  data-toggle="tab"
+                  role="tab"
+                  aria-controls="nav-home"
+                  aria-selected="false"
+                  to={ROUTES.PI_PURCHASE}
+                >
+                  Pi-Test Network
+                </Link>
+                <Link
+                  className="nav-item nav-link"
                   id="nav-account-tab"
                   data-toggle="tab"
                   role="tab"

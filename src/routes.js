@@ -1,6 +1,7 @@
 export const NOT_FOUND = '*';
 export const LANDING = '/';
 export const HOME = '/home';
+export const PI_PURCHASE = '/pi-payments';
 
 export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
