@@ -18,5 +18,5 @@ export const BUSINESSES_DETAILS = '/store/:id';
 export const JOIN_A_BUSINESSES = '/join-store';
 
 export const PRODUCTS = '/product';
-export const PRODUCTS_NEW = '/product/new';
-export const PRODUCTS_DETAILS = '/product/:id';
+export const PRODUCT_NEW = '/product/new';
+export const PRODUCT_DETAILS = '/product/:id';

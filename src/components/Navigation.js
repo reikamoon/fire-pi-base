@@ -50,35 +50,21 @@ const Navigation = () => (
                 </Link>
 
                 {!!authUser.company_id && (
-                  <>
-                    <Link
-                      className="nav-item nav-link"
-                      id="nav-buildings-tab"
-                      data-toggle="tab"
-                      role="tab"
-                      aria-controls="nav-buildings"
-                      aria-selected="false"
-                      to={{
-                        pathname: `${ROUTES.COMPANIES}`
-                        // pathname: `${ROUTES.COMPANIES}/${authUser.company_id}`,
-                        // state: { company },
-                      }}
-                    >
-                      Company
-                    </Link>
-
-                    <Link
-                      className="nav-item nav-link"
-                      id="nav-floors-tab"
-                      data-toggle="tab"
-                      role="tab"
-                      aria-controls="nav-floors"
-                      aria-selected="false"
-                      to={ROUTES.FLOORS}
-                    >
-                      Floors
-                    </Link>
-                  </>
+                  <Link
+                    className="nav-item nav-link"
+                    id="nav-buildings-tab"
+                    data-toggle="tab"
+                    role="tab"
+                    aria-controls="nav-buildings"
+                    aria-selected="false"
+                    to={{
+                      pathname: `${ROUTES.BUSINESSES}`
+                      // pathname: `${ROUTES.BUSINESSES}/${authUser.company_id}`,
+                      // state: { company },
+                    }}
+                  >
+                    Company
+                  </Link>
                 )}
 
                 {!!authUser.roles.ADMIN && (
