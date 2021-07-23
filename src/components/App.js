@@ -12,11 +12,8 @@ import {
   NotFoundPage,
   AccountPage,
   AdminPage,
-  CompaniesPage,
-  BuildingsPage,
-  FloorsPage,
-  RoomsPage,
-  ReportsPage,
+  BusinessesPage,
+  ProductsPage,
   PI_PURCHASE,
 } from './Displays';
 
@@ -43,18 +40,12 @@ const App = () => (
 
                 <Route path={ROUTES.ADMIN} component={AdminPage} />
                 <Route path={ROUTES.ACCOUNT} component={AccountPage} />
-                <Route path={ROUTES.COMPANIES} component={CompaniesPage} />
-                <Route path={ROUTES.BUILDINGS} component={BuildingsPage} />
-                <Route path={ROUTES.FLOORS} component={FloorsPage} />
-                <Route path={ROUTES.ROOMS} component={RoomsPage} />
-                <Route path={ROUTES.REPORTS} component={ReportsPage} />
-
-                <Route exact path={ROUTES.PI_PURCHASE}>
-                  <PI_PURCHASE />
-                </Route>
+                <Route path={ROUTES.BUSINESSES} component={BusinessesPage} />
+                <Route path={ROUTES.PRODUCTS} component={ProductsPage} />
+                <Route path={ROUTES.PI_PURCHASE} component={PI_PURCHASE} />
+                
                 <Route exact path={ROUTES.HOME}>
-                  <Redirect to={ROUTES.REPORTS} />
-                  {/* <HomePage /> */}
+                  <Redirect to={ROUTES.PI_PURCHASE} />
                 </Route>
                 <Route exact path={ROUTES.LANDING}>
                   <Redirect to={ROUTES.HOME} />
@@ -84,19 +75,7 @@ const App = () => (
                 <Route path={ROUTES.ACCOUNT}>
                   <Redirect to={ROUTES.SIGN_IN} />
                 </Route>
-                <Route path={ROUTES.COMPANIES}>
-                  <Redirect to={ROUTES.SIGN_IN} />
-                </Route>
-                <Route path={ROUTES.BUILDINGS}>
-                  <Redirect to={ROUTES.SIGN_IN} />
-                </Route>
-                <Route path={ROUTES.FLOORS}>
-                  <Redirect to={ROUTES.SIGN_IN} />
-                </Route>
-                <Route path={ROUTES.ROOMS}>
-                  <Redirect to={ROUTES.SIGN_IN} />
-                </Route>
-                <Route path={ROUTES.REPORTS}>
+                <Route path={ROUTES.BUSINESSES}>
                   <Redirect to={ROUTES.SIGN_IN} />
                 </Route>
 
