@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { COMPANIES } from '../../routes';
+import { BUSINESSES } from '../../routes';
 
 import { withFirebase } from '../Firebase';
 
@@ -67,7 +67,7 @@ class CompanyForm extends Component {
         </form>
 
         <button className="btn btn-primary" type="submit" onClick={this.onCreateCompany}>
-          <Link to={COMPANIES}>click me to send back</Link>
+          <Link to={BUSINESSES}>click me to send back</Link>
         </button>
 
       </div>

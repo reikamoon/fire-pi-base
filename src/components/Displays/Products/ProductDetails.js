@@ -283,9 +283,9 @@ class ReportDetail extends Component {
             )}
 
             <div className="container text-center mt-3">
-              <Link to={ROUTES.REPORTS}>
+              {/* <Link to={ROUTES.REPORTS}> */}
                 <button className="btn btn-secondary">Back </button>
-              </Link>
+              {/* </Link> */}
             </div>
           </div>
         )}

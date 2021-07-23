@@ -5,15 +5,15 @@ import { AuthUserContext } from '../../Session';
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../../routes';
 
-import { CreateBuildingForm } from '../../Utils';
+import { CreateProductForm } from '../../Utils';
 
-class BuildingList extends Component {
+class ProductList extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       loading: false,
-      buildings: [],
+      products: [],
       limit: 5,
       companyID: this.props.companyID,
     };
@@ -23,38 +23,38 @@ class BuildingList extends Component {
     this.setState({ loading: true });
 
     this.props.firebase
-      .buildings()
+      .products()
       .orderByChild('companyID')
       .limitToLast(this.state.limit)
       .on('value', (snapshot) => {
-        const buildingsObject = snapshot.val();
+        const productsObject = snapshot.val();
 
-        if (buildingsObject) {
-          const buildingList = Object.keys(buildingsObject).map((key) => ({
-            ...buildingsObject[key],
+        if (productsObject) {
+          const productList = Object.keys(productsObject).map((key) => ({
+            ...productsObject[key],
             uid: key,
           }));
 
           this.setState({
-            buildings: buildingList,
+            products: productList,
             loading: false,
           });
         } else {
-          this.setState({ buildings: null, loading: false });
+          this.setState({ products: null, loading: false });
         }
       });
   }
 
   componentWillUnmount() {
-    this.props.firebase.buildings().off();
+    this.props.firebase.products().off();
   }
 
   onNextPage = () => {
-    this.setState((state) => ({ limit: state.limit + 5 }), this.onListenForBuildings);
+    this.setState((state) => ({ limit: state.limit + 5 }), this.onListenForProducts);
   };
 
   render() {
-    const { buildings, loading } = this.state;
+    const { products, loading } = this.state;
 
     return (
       <AuthUserContext.Consumer>
@@ -62,31 +62,31 @@ class BuildingList extends Component {
           <div className="container add-padding-bottom">
             {loading && <div>Loading ...</div>}
 
-            {!buildings ? (
-              <div>There are no buildings ...</div>
+            {!products ? (
+              <div>There are no products ...</div>
             ) : (
               <div>
-                {buildings.length > this.state.limit && (
+                {products.length > this.state.limit && (
                   <button className="btn btn-secondary" type="button" onClick={this.onNextPage}>
                     Show More
                   </button>
                 )}
 
                 <ul className="ul-comp-list">
-                  {buildings.map(
-                    (building) =>
-                      building.companyID === authUser.company_id && (
-                        <li key={building.uid} className="r-details-card">
-                          <strong>Title:</strong> {building.buildingTitle}
+                  {products.map(
+                    (product) =>
+                      product.companyID === authUser.company_id && (
+                        <li key={product.uid} className="r-details-card">
+                          <strong>Title:</strong> {product.productTitle}
                           <br />
-                          <strong>Location:</strong> {building.buildingAddress}
+                          <strong>Location:</strong> {product.productAddress}
                           <br />
                           <div className="row">
                             <div className="ml-3 mr-2">
                               <Link
                                 to={{
-                                  pathname: `${ROUTES.BUILDINGS}/${building.uid}`,
-                                  state: { building },
+                                  pathname: `${ROUTES.BUSINESSES}/${product.uid}`,
+                                  state: { product },
                                 }}
                               >
                                 Details
@@ -101,7 +101,7 @@ class BuildingList extends Component {
               </div>
             )}
 
-            {authUser.roles === 'ADMIN' && <CreateBuildingForm authUser={authUser} />}
+            {authUser.roles === 'ADMIN' && <CreateProductForm authUser={authUser} />}
           </div>
         )}
       </AuthUserContext.Consumer>
@@ -109,4 +109,4 @@ class BuildingList extends Component {
   }
 }
 
-export default withFirebase(BuildingList);
+export default withFirebase(ProductList);

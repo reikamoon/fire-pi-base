@@ -11,7 +11,7 @@ import {
 
 // import { PasswordForgetForm, PasswordChangeForm, SignOutButton} from '../Auth';
 import { PasswordChangeForm, SignOutButton } from '../Auth';
-import { JoinCompanyForm, ToggleSwitch } from '../Utils';
+import { JoinBusinessForm, ToggleSwitch } from '../Utils';
 
 // import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -46,7 +46,7 @@ const AccountPage = () => {
               {authUser.email}
               <br />
               <strong>Company: </strong>
-              {authUser.company_id || 'No Company assigned.'}
+              {authUser.business_id || 'No Company assigned.'}
             </p>
             <p>
               <strong>Roles:</strong>
@@ -55,7 +55,7 @@ const AccountPage = () => {
           </div>
           <hr />
 
-          {!authUser.company_id && <JoinCompanyForm />}
+          {!authUser.business_id && <JoinBusinessForm />}
 
           <SignOutButton />
 

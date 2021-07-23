@@ -1,12 +1,8 @@
 import AddressForm from './AddressForm';
 import ToggleSwitch from './ToggleSwitch';
 
-import JoinCompanyForm from './JoinCompanyForm';
-import CreateCompanyForm from './CreateCompanyForm';
-import CreateBuildingForm from './CreateBuildingForm';
-import CreateFloorForm from './CreateFloorForm';
-import CreateRoomForm from './CreateRoomForm';
-import CreateReportForm from './CreateReportForm';
+import JoinBusinessForm from './JoinBusinessForm';
+import CreateBusinessForm from './CreateBusinessForm';
+import CreateProductForm from './CreateProductForm';
 
-export { AddressForm, ToggleSwitch, JoinCompanyForm, CreateReportForm };
-export { CreateCompanyForm, CreateBuildingForm, CreateFloorForm, CreateRoomForm };
+export { AddressForm, ToggleSwitch, JoinBusinessForm, CreateBusinessForm, CreateProductForm };

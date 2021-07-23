@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Prompt } from 'react-router-dom';
 
-import { REPORTS } from '../../routes';
+import { PRODUCTS } from '../../routes';
 import { withFirebase } from '../Firebase';
 
 
@@ -212,7 +212,7 @@ class ReportForm extends Component {
         {/* <p>Blocking? {isBlocking ? 'Yes, click a link or the back button' : 'Nope'}</p> */}
 
         <button className="btn btn-primary" type="submit" onClick={this.onCreateReport}>
-          <Link to={REPORTS}>Submit Report</Link>
+          <Link to={PRODUCTS}>Submit Report</Link>
         </button>
       </div>
     );

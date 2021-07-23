@@ -5,12 +5,12 @@ import { withFirebase } from '../Firebase';
 import { AuthUserContext } from '../Session';
 import * as ROUTES from '../../routes';
 
-const JoinCompanyPage = () => (
+const JoinBusinessPage = () => (
   <AuthUserContext.Consumer>
     {(authUser) => (
       <div>
-        <h3>Join A Company</h3>
-        <JoinCompanyForm authUser={authUser} />
+        <h3>Join A Business</h3>
+        <JoinBusinessForm authUser={authUser} />
       </div>
     )}
   </AuthUserContext.Consumer>
@@ -21,7 +21,7 @@ const INITIAL_STATE = {
   error: null,
 };
 
-class CompanyFormBase extends Component {
+class BusinessFormBase extends Component {
   constructor(props) {
     super(props);
     this.state = { ...INITIAL_STATE };
@@ -32,7 +32,7 @@ class CompanyFormBase extends Component {
     const { companyID } = this.state;
 
     this.props.firebase
-      .setUserCompany(authUser.uid, companyID)
+      .setUserBusiness(authUser.uid, companyID)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
       })
@@ -61,10 +61,10 @@ class CompanyFormBase extends Component {
           value={this.state.companyID}
           onChange={this.onChange}
           type="text"
-          placeholder="Company ID"
+          placeholder="Business ID"
         />
         <button className="btn btn-primary" disabled={isInvalid} type="submit">
-          Join This Company
+          Join This Business
         </button>
 
         {error && <p>{error.message}</p>}
@@ -73,14 +73,14 @@ class CompanyFormBase extends Component {
   }
 }
 
-const CompanyLink = () => (
+const BusinessLink = () => (
   <p>
-    <Link to={ROUTES.JOIN_A_COMPANY}>Join A Company!!</Link>
+    <Link to={ROUTES.JOIN_A_BUSINESSES}>Join A Business!!</Link>
   </p>
 );
 
-export default JoinCompanyPage;
+export default JoinBusinessPage;
 
-const JoinCompanyForm = withFirebase(CompanyFormBase);
+const JoinBusinessForm = withFirebase(BusinessFormBase);
 
-export { JoinCompanyForm, CompanyLink };
+export { JoinBusinessForm, BusinessLink };

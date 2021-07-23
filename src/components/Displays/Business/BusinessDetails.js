@@ -9,39 +9,37 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-
-class RoomDetails extends Component {
+class BusinessDetail extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      loading: false,
-      room: null,
       editMode: false,
-      companyID: '',
-      roomTitle: '',
-      roomAddress: '',
+      loading: false,
+      business: null,
+      businessTitle: '',
+      businessAddress: '',
       ...props.location.state,
     };
   }
 
   componentDidMount() {
-    if (this.state.room) {
+    if (this.state.business) {
       return;
     }
 
     this.setState({ loading: true });
 
-    this.props.firebase.room(this.props.match.params.id).on('value', (snapshot) => {
+    this.props.firebase.business(this.props.match.params.id).on('value', (snapshot) => {
       this.setState({
-        room: snapshot.val(),
+        business: snapshot.val(),
         loading: false,
       });
     });
   }
 
   componentWillUnmount() {
-    this.props.firebase.room(this.props.match.params.id).off();
+    this.props.firebase.business(this.props.match.params.id).off();
   }
 
   onChange = (event) => {
@@ -51,36 +49,37 @@ class RoomDetails extends Component {
   onToggleEditMode = () => {
     this.setState((state) => ({
       editMode: !state.editMode,
-      companyID: this.state.companyID,
-      buildingID: this.state.buildingID,
-      floorID: this.state.floorID,
-      roomTitle: this.state.room.roomTitle,
-      roomAddress: this.state.room.roomAddress,
+      businessTitle: this.state.business.businessTitle,
+      businessAddress: this.state.business.businessAddress,
     }));
   };
 
   onSaveEdit = () => {
-    const { room, roomTitle, roomAddress } = this.state;
-    const { uid, ...roomSnapshot } = room;
+    const { business, businessTitle, businessAddress } = this.state;
+    const { uid, ...businessSnapshot } = business;
 
-    this.props.firebase.room(room.uid).set({
-      ...roomSnapshot,
-      roomTitle,
-      roomAddress,
+    this.props.firebase.business(business.uid).set({
+      ...businessSnapshot,
+      businessTitle,
+      businessAddress,
       editedAt: this.props.firebase.serverValue.TIMESTAMP,
     });
 
     this.setState({ editMode: false });
   };
 
-  onRemoveRoom = (uid) => {
-    this.props.firebase.room(uid).remove();
+  onRemoveBusiness = (uid, userID) => {
+    let dbUSER = this.props.firebase.user(userID)
+    dbUSER.child('businesses').child(uid).remove();
+    dbUSER.child('business_id').remove();
+    this.props.firebase.business(uid).remove();
+    console.log("REMOVED Business: ", uid, dbUSER);
   };
 
   render() {
-    const { loading, room, editMode, roomTitle, roomAddress } = this.state;
+    const { loading, business, editMode, businessTitle, businessAddress } = this.state;
 
-    const fullDateCreated = new Date(room.createdAt * 1000).toString().split(' ');
+    const fullDateCreated = new Date(business.createdAt * 1000).toString().split(' ');
     const dateCreated =
       fullDateCreated[0] +
       ', ' +
@@ -94,7 +93,7 @@ class RoomDetails extends Component {
       fullDateCreated[7] +
       fullDateCreated[8];
 
-    const fullDateEdited = new Date(room.editedAt * 1000).toString().split(' ');
+    const fullDateEdited = new Date(business.editedAt * 1000).toString().split(' ');
     const dateEdited =
       fullDateEdited[0] +
       ', ' +
@@ -114,58 +113,61 @@ class RoomDetails extends Component {
           <div className="container">
             {loading && <div>Loading ...</div>}
 
-            {room && (
+            {/* Display */}
+            {business && (
               <div>
-                <h5>Room ({room.uid})</h5>
-                <strong>Title:</strong> {room.roomTitle}
+                <h5>Business ({business.uid})</h5>
+                <strong>Title:</strong> {business.businessTitle}
                 <br />
-                <strong>Location:</strong> {room.roomAddress}
+                <strong>Location:</strong> {business.businessAddress}
                 <br />
-                <strong>Company ID:</strong> {room.companyID}
-                <br />
-                <strong>Building ID:</strong> {room.buildingID}
-                <br />
-                <strong>Floor ID:</strong> {room.floorID}
+                <strong>Business Owner:</strong> {business.ownerID}
                 <br />
                 <strong>Created At:</strong> {dateCreated}
                 <br />
-                {room.editedAt && (
+                {business.editedAt && (
                   <p>
                     <strong>Last Edited At:</strong> {dateEdited}
+                  </p>
+                )}
+                <br />
+                {business.buildingList && (
+                  <p>
+                    <strong>Buildings List:</strong> {business.buildingsList}
                   </p>
                 )}
               </div>
             )}
 
-            {authUser.uid === room.owner.ownerID && (
+            {authUser.uid === business.owner.ownerID && (
               <div className="">
                 {editMode ? (
                   <div>
-                    <div>
+                    <div className="container">
                       <input
                         type="text"
-                        className="col-10 form-input"
-                        placeholder="Room Name?"
-                        name="roomTitle"
-                        value={roomTitle}
+                        className="form-input form-control"
+                        placeholder="Business name..."
+                        name="businessTitle"
+                        value={businessTitle}
                         onChange={this.onChange}
                       />
                       <input
-                        placeholder="Room Location/Number?"
                         type="text"
-                        className="col-10 form-input"
-                        name="roomAddress"
-                        value={roomAddress}
+                        className="form-input form-control"
+                        placeholder="Address..."
+                        name="businessAddress"
+                        value={businessAddress}
                         onChange={this.onChange}
                       />
                     </div>
 
                     <div className="justify-me">
                       <button className="btn btn-secondary btn-bot" onClick={this.onSaveEdit}>
-                        Save
+                        Save Changes
                       </button>
                       <button className="btn btn-secondary btn-bot" onClick={this.onToggleEditMode}>
-                        Reset
+                        Cancel Edit
                       </button>
                     </div>
                   </div>
@@ -175,28 +177,27 @@ class RoomDetails extends Component {
                       <FontAwesomeIcon icon={faEdit} />
                     </button>
 
-                    <button type="button" className="btn-li" onClick={() => this.onRemoveRoom(room.uid)}>
-                      <Link to={ROUTES.ROOMS}>
-                        <FontAwesomeIcon icon={faTrash} />
-                      </Link>
+                    <button className="btn-li" type="button" onClick={(auhtUser) => this.onRemoveBusiness(business.uid, auhtUser.uid)}>
+                      <Link to={ROUTES.BUSINESSES}><FontAwesomeIcon icon={faTrash} /></Link>
                     </button>
                   </div>
                 )}
               </div>
             )}
 
-            <div className="row justify-me">
+            {/* Navigation */}
+            {/* <div className="row">
               <div className="ml-3 mr-2">
-                <Link to={ROUTES.ROOMS}>
+                <Link to={ROUTES.BUSINESSES}>
                   <button className="btn btn-secondary">Back</button>
                 </Link>
               </div>
               <div className="mr-2">
-                <Link to={{ pathname: `${ROUTES.REPORTS}`, state: room }}>
-                  <button className="btn btn-success">Create Report</button>
+                <Link to={{ pathname: `${ROUTES.BUILDINGS}`, state: business }}>
+                  <button className="btn btn-success">Buildings List</button>
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         )}
       </AuthUserContext.Consumer>
@@ -204,4 +205,4 @@ class RoomDetails extends Component {
   }
 }
 
-export default withFirebase(RoomDetails);
+export default withFirebase(BusinessDetail);

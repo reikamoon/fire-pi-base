@@ -5,9 +5,9 @@ import { AuthUserContext } from '../../Session';
 import { withFirebase } from '../../Firebase';
 import * as ROUTES from '../../../routes';
 
-import { CreateCompanyForm } from '../../Utils';
+import { CreateBusinessForm } from '../../Utils';
 
-class CompanyList extends Component {
+class BusinessList extends Component {
   constructor(props) {
     super(props);
 
@@ -51,7 +51,7 @@ class CompanyList extends Component {
   onNextPage = () => {
     this.setState(
       (state) => ({ limit: state.limit + 5 }),
-      this.onListenForCompanies,
+      this.onListenForBusinesses,
     );
   };
 
@@ -88,7 +88,7 @@ class CompanyList extends Component {
                             <div className="ml-3 mr-2">
                               <Link
                                 to={{
-                                  pathname: `${ROUTES.COMPANIES}/${company.uid}`,
+                                  pathname: `${ROUTES.BUSINESSES}/${company.uid}`,
                                   state: { company },
                                 }}
                               >
@@ -104,7 +104,7 @@ class CompanyList extends Component {
               </div>
             )}
 
-            {authUser.roles === 'ADMIN' && <CreateCompanyForm authUser={authUser} />}
+            {authUser.roles === 'ADMIN' && <CreateBusinessForm authUser={authUser} />}
           </div>
         )}
       </AuthUserContext.Consumer>
@@ -112,4 +112,4 @@ class CompanyList extends Component {
   }
 }
 
-export default withFirebase(CompanyList);
+export default withFirebase(BusinessList);
