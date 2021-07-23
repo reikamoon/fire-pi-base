@@ -1,68 +1,33 @@
 {
   "rules": {
-    ".read": "now < 1629529200000",  // 2021-8-21
-    ".write": "now < 1629529200000",  // 2021-8-21
+    ".read": "now < 1629529200000", // 2021-8-21
+    ".write": "now < 1629529200000", // 2021-8-21
+
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid || root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])",
+        ".write": "$uid === auth.uid || root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])"
+      },
+      ".read": "root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])",
+      ".write": "root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])"
+    },
+
+    "businesses": {
+      ".indexOn": ["createdAt", "id"],
+      "$uid": {
+        ".write": "data.exists() ? data.child('userId').val() === auth.uid : newData.child('userId').val() === auth.uid"
+      },
+      ".read": "auth != null",
+      ".write": "auth != null"
+    }
+
+    //     "reports": {
+    //       ".indexOn": ["createdAt", "companyID", "buildingID", "floorID", "rooomID"],
+    //       "$uid": {
+    //         ".write": "data.exists() ? data.child('reporter').val() === auth.uid : newData.child('reporter').val() === auth.uid"
+    //       },
+    //       ".read": "auth != null",
+    //       ".write": "auth != null",
+    //     }
   }
 }
-
-// {
-//   "rules": {
-//     ".read": true,
-//     ".write": true,
-
-//     "users": {
-//       "$uid": {
-//         ".read": "$uid === auth.uid || root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])",
-//         ".write": "$uid === auth.uid || root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])"
-//       },
-//       ".read": "root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])",
-//       ".write": "root.child('users/'+auth.uid).child('roles').hasChildren(['ADMIN'])"
-//     },
-
-//     "companies": {
-//       ".indexOn": ["createdAt", "id"],
-//       "$uid": {
-//         ".write": "data.exists() ? data.child('userId').val() === auth.uid : newData.child('userId').val() === auth.uid",
-//       },
-//       ".read": "auth != null",
-//       ".write": "auth != null",
-//     },
-
-//     "buildings": {
-//       ".indexOn": ["createdAt", "companyID"],
-//       "$uid": {
-//         ".write": "data.exists() ? data.child('userId').val() === auth.uid : newData.child('userId').val() === auth.uid",
-//       },
-//       ".read": "auth != null",
-//       ".write": "auth != null",
-//     },
-
-//     "floors": {
-//       ".indexOn": ["createdAt", "companyID", "buildingID"],
-//       "$uid": {
-//         ".write": "data.exists() ? data.child('userId').val() === auth.uid : newData.child('userId').val() === auth.uid",
-//       },
-//       ".read": "auth != null",
-//       ".write": "auth != null",
-//     },
-
-//     "rooms": {
-//       ".indexOn": ["createdAt", "companyID", "buildingID", "floorID"],
-//       "$uid": {
-//         ".write": "data.exists() ? data.child('userId').val() === auth.uid : newData.child('userId').val() === auth.uid"
-//       },
-//       ".read": "auth != null",
-//       ".write": "auth != null",
-//     },
-    
-//     "reports": {
-//       ".indexOn": ["createdAt", "companyID", "buildingID", "floorID", "rooomID"],
-//       "$uid": {
-//         ".write": "data.exists() ? data.child('reporter').val() === auth.uid : newData.child('reporter').val() === auth.uid"
-//       },
-//       ".read": "auth != null",
-//       ".write": "auth != null",
-//     },
-
-//   }
-// }

@@ -1,0 +1,42 @@
+{
+  "users" : {
+    "ACpnZNrYpHWcSGeKmcwdb1dXlEf2" : {
+      "pi" : "@cbarnes2000",
+      "email" : "Chris.Barnes.2000@me.com",
+      "phone" : "+1-(360)-593-3087",
+      "roles" : "ADMIN",
+      "username" : "Chris Barnes",
+      "status" : "ACTIVE"
+    }
+  },
+  "businesses" : {
+    "SGeKmcwdb1dXlEf2ACpnZNrYpHWc" : {
+      "name" : "Quest",
+      "phone" : "+234-(810)-851-1435",
+      "email" : "info@questpi.co",
+      "website" : "https://questpi.co",
+      "ownerID" : "ACpnZNrYpHWcSGeKmcwdb1dXlEf2",
+      "image" : "",
+      "category" : "Ecosystem",
+      "address" : {
+        "street_1" : "",
+        "street_2" : "",
+        "pincode" : "",
+        "city" : "Lagos",
+        "state" : "Nigeria",
+        "county" : "",
+        "latitude" : "",
+        "longitude" : ""
+      },
+      "status" : "ACTIVE",
+      "products": {
+        "SGeCpnZKmcwNrYdb1dXlEf2ApHWc" : {
+          "name" : "",
+          "price": "",
+          "created": "",
+          "edited": ""
+        }
+      }
+    }
+  }
+}
