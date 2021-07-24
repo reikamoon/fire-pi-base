@@ -1,7 +1,7 @@
 {
   "private": true,
   "license": "MIT",
-  "name": "questpi",
+  "name": "quest-pi",
   "version": "1.0.0",
   "main": "index.js",
   "homepage": "https://questpi.co/#/",
@@ -29,7 +29,8 @@
   ],
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "firebase deploy --only hosting",
+    "gh-deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
