@@ -19,10 +19,19 @@
       },
       ".read": "auth != null",
       ".write": "auth != null"
+    },
+
+    "products": {
+      ".indexOn": ["createdAt", "businessID"],
+      "$uid": {
+        ".write": "data.exists() ? data.child('seller').val() === auth.uid : newData.child('seller').val() === auth.uid"
+      },
+      ".read": "auth != null",
+      ".write": "auth != null"
     }
 
     //     "reports": {
-    //       ".indexOn": ["createdAt", "businessID", "id"],
+    //       ".indexOn": ["createdAt", "companyID", "buildingID", "floorID", "rooomID"],
     //       "$uid": {
     //         ".write": "data.exists() ? data.child('reporter').val() === auth.uid : newData.child('reporter').val() === auth.uid"
     //       },

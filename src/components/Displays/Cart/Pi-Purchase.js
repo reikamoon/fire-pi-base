@@ -154,7 +154,7 @@ const App = () => {
             </AppBar>
             <Container maxWidth={'xs'}>
                 <Grid item xs={12}>
-                    <div style={{ marginTop: '1em' }} />
+                    <div style={{ marginTop: '1em', marginBottom: '3em'  }} />
                     {
                         isDev && (
                             <Alert severity="warning">Development mode is enabled all Pi payments will be simulated.</Alert>
