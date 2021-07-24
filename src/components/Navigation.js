@@ -53,10 +53,10 @@ const Navigation = () => (
                 >
                   <FontAwesomeIcon icon={faCompass} /> Find Pi Shops Near You
                 </Link>
-                {/* {!!authUser.business_id && ( DO Something )} */}
+                {/* {authUser.business_id && ( DO Something )} */}
 
-                {/* 
-                {!!authUser.roles.ADMIN && (
+                
+                {authUser.roles === 'ADMIN' && (
                   <Link
                     className="nav-item nav-link"
                     id="nav-admin-tab"
@@ -68,7 +68,7 @@ const Navigation = () => (
                   >
                     Admin
                   </Link>
-                )} */}
+                )}
               </div>
             </nav>
           </div>

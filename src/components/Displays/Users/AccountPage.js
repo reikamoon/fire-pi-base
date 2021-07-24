@@ -11,7 +11,7 @@ import {
 
 // import { PasswordForgetForm, PasswordChangeForm, SignOutButton} from '../Auth';
 import { PasswordChangeForm, SignOutButton } from '../../Auth';
-import { JoinBusinessForm, ToggleSwitch } from '../../Utils';
+import { CreateBusinessForm, JoinBusinessForm, ToggleSwitch } from '../../Utils';
 
 // import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -49,18 +49,13 @@ const AccountPage = () => {
               {authUser.business_id || 'No Business assigned.'}
             </p>
             <p>
-              <strong>Roles:</strong>
-              {authUser.roles}
+              <strong>Roles:</strong> {authUser.roles}
             </p>
+            <SignOutButton />
+            <br />
+            <br />
           </div>
           <hr />
-
-          {!authUser.business_id && <JoinBusinessForm />}
-
-          <SignOutButton />
-
-          <br />
-
           <div>
             <ToggleSwitch id="settings" checked={settings} onChange={onSettingsChange} />
             <label htmlFor="settings">Edit Account Settings</label>
@@ -74,6 +69,18 @@ const AccountPage = () => {
             </div>
           )}
 
+          <br />
+          <br />
+
+          {/* {authUser.roles === 'ADMIN' && } */}
+          
+          {!authUser.business_id && (
+            <div>
+              <JoinBusinessForm />
+              <br /> OR <br /><br />
+              <CreateBusinessForm authUser={authUser} />
+            </div>
+          )}
         </div>
       )}
     </AuthUserContext.Consumer>
