@@ -1,17 +1,17 @@
 import React, { Component, useState } from 'react';
 import { compose } from 'recompose';
 
-import { withFirebase } from '../Firebase';
+import { withFirebase } from '../../Firebase';
 
 import {
   AuthUserContext,
   withAuthorization,
   withEmailVerification,
-} from '../Session';
+} from '../../Session';
 
 // import { PasswordForgetForm, PasswordChangeForm, SignOutButton} from '../Auth';
-import { PasswordChangeForm, SignOutButton } from '../Auth';
-import { JoinBusinessForm, ToggleSwitch } from '../Utils';
+import { PasswordChangeForm, SignOutButton } from '../../Auth';
+import { JoinBusinessForm, ToggleSwitch } from '../../Utils';
 
 // import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -45,8 +45,8 @@ const AccountPage = () => {
               <strong>Email: </strong>
               {authUser.email}
               <br />
-              <strong>Company: </strong>
-              {authUser.business_id || 'No Company assigned.'}
+              <strong>Business: </strong>
+              {authUser.business_id || 'No Business assigned.'}
             </p>
             <p>
               <strong>Roles:</strong>

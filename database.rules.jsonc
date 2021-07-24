@@ -22,7 +22,7 @@
     }
 
     //     "reports": {
-    //       ".indexOn": ["createdAt", "companyID", "buildingID", "floorID", "rooomID"],
+    //       ".indexOn": ["createdAt", "businessID", "id"],
     //       "$uid": {
     //         ".write": "data.exists() ? data.child('reporter').val() === auth.uid : newData.child('reporter').val() === auth.uid"
     //       },

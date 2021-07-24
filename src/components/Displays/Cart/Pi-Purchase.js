@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 // import { render } from 'react-dom'
-import { createPiPayment, authenticatePiUser, openPiShareDialog } from '../services/pi';
+import { createPiPayment, authenticatePiUser, openPiShareDialog } from '../../services/pi';
 import { makeStyles, Button, Container, Grid, TextField, CircularProgress, Typography, Paper, AppBar } from '@material-ui/core'
 import { Alert } from '@material-ui/lab'
 

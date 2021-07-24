@@ -17,7 +17,7 @@ const JoinBusinessPage = () => (
 );
 
 const INITIAL_STATE = {
-  companyID: '',
+  businessID: '',
   error: null,
 };
 
@@ -29,10 +29,10 @@ class BusinessFormBase extends Component {
 
   onSubmit = event => {
     const { authUser } = this.props;
-    const { companyID } = this.state;
+    const { businessID } = this.state;
 
     this.props.firebase
-      .setUserBusiness(authUser.uid, companyID)
+      .setUserBusiness(authUser.uid, businessID)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
       })
@@ -48,17 +48,17 @@ class BusinessFormBase extends Component {
   };
 
   render() {
-    const { companyID, error } = this.state;
+    const { businessID, error } = this.state;
 
-    const isInvalid = companyID === '';
+    const isInvalid = businessID === '';
 
     return (
       <form onSubmit={this.onSubmit}>
         <input
           className="form-input"
-          name="companyID"
-          autoComplete="companyID"
-          value={this.state.companyID}
+          name="businessID"
+          autoComplete="businessID"
+          value={this.state.businessID}
           onChange={this.onChange}
           type="text"
           placeholder="Business ID"

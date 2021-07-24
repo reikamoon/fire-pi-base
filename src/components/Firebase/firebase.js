@@ -16,7 +16,6 @@ const config = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
-
 class Firebase {
   constructor() {
     app.initializeApp(config);
@@ -119,94 +118,28 @@ class Firebase {
     this.analytics.logEvent('Referencing Users List');
     return this.db.ref('users');
   };
-  setUserCompany = (userID, companyID) => this.user(userID).update({ company_id: companyID });
+  setUserBusiness = (userID, businessID) => this.user(userID).update({ business_id: businessID });
 
-  // **** Company API ***
-  company = (uid) => {
-    this.analytics.logEvent("Referencing A Company's Data");
-    return this.db.ref(`companies/${uid}`);
+  // **** Business API ***
+  business = (uid) => {
+    this.analytics.logEvent("Referencing A Business's Data");
+    return this.db.ref(`businesses/${uid}`);
   };
-  companies = () => {
-    this.analytics.logEvent("Referencing Companies List");
-    return this.db.ref('companies');
+  businesses = () => {
+    this.analytics.logEvent("Referencing Businesses List");
+    return this.db.ref('businesses');
   };
 
-  createCompany = (companyData) => {
-    var newCompanyKey = this.db.ref('companies').push().key;
+  createBusiness = (businessData) => {
+    var newBusinessKey = this.db.ref('businesses').push().key;
     var updates = {};
-    updates['/companies/' + newCompanyKey] = companyData;
-    updates['/users/' + companyData.owner.ownerID + '/companies/' + companyData.companyTitle] = newCompanyKey;
-    updates['/users/' + companyData.owner.ownerID + '/company_id'] = newCompanyKey;
+    updates['/businesses/' + newBusinessKey] = businessData;
+    updates['/users/' + businessData.owner.ownerID + '/businesses/' + businessData.businessTitle] = newBusinessKey;
+    updates['/users/' + businessData.owner.ownerID + '/business_id'] = newBusinessKey;
 
-    this.analytics.logEvent("Creating A New Company");
+    this.analytics.logEvent("Creating A New Business");
     this.db.ref().update(updates);
-    return newCompanyKey;
-  };
-
-  // **** Building API ***
-  building = (uid) => {
-    this.analytics.logEvent("Referencing A Building's Data");
-    return this.db.ref(`buildings/${uid}`);
-  };
-  buildings = () => {
-    this.analytics.logEvent("Referencing Buildings List");
-    return this.db.ref('buildings');
-  };
-
-  createBuilding = (buildingData) => {
-    let { companyID, buildingTitle } = buildingData;
-    var newBuildingKey = this.db.ref('buildings').push().key;
-    var updates = {};
-    updates['/companies/' + companyID + '/buildings/' + buildingTitle] = newBuildingKey;
-    updates['/buildings/' + newBuildingKey] = buildingData;
-
-    this.analytics.logEvent("Creating A New Building");
-    this.db.ref().update(updates);
-    return newBuildingKey;
-  };
-
-  // **** Floors API ***
-  floor = (uid) => {
-    this.analytics.logEvent("Referencing A Floor's Data");
-    return this.db.ref(`floors/${uid}`);
-  };
-  floors = () => {
-    this.analytics.logEvent("Referencing Floors List");
-    return this.db.ref('floors');
-  };
-
-  createFloor = (floorData) => {
-    let { companyID, buildingID, floorTitle } = floorData;
-    var newFloorKey = this.db.ref('floors').push().key;
-    var updates = {};
-    updates['/companies/' + companyID + '/buildings/' + buildingID + '/floors/' + floorTitle] = newFloorKey;
-    updates['/floors/' + newFloorKey] = floorData;
-
-    this.analytics.logEvent("Creating A New Floor");
-    this.db.ref().update(updates);
-    return newFloorKey;
-  };
-
-  // *** Rooms API ***
-  room = (uid) => {
-    this.analytics.logEvent("Referencing A Rooms's Data");
-    return this.db.ref(`rooms/${uid}`);
-  };
-  rooms = () => {
-    this.analytics.logEvent("Referencing Rooms List");
-    return this.db.ref('rooms');
-  };
-
-  createRoom = (roomData) => {
-    let { companyID, buildingID, floorID, roomTitle } = roomData;
-    var newRoomKey = this.db.ref('rooms').push().key;
-    var updates = {};
-    updates['/companies/' + companyID + '/buildings/' + buildingID + '/floors/' + floorID + '/rooms/' + roomTitle] = newRoomKey;
-    updates['/rooms/' + newRoomKey] = roomData;
-
-    this.analytics.logEvent("Creating A New Room");
-    this.db.ref().update(updates);
-    return newRoomKey;
+    return newBusinessKey;
   };
 
   // *** Report API ***
@@ -221,17 +154,17 @@ class Firebase {
 
   createReport = (reportData) => {
     let { location, reportTitle, reporter } = reportData;
-    let { companyID, buildingID, floorID, roomID } = location;
+    let { businessID, buildingID, floorID, roomID } = location;
 
     // Get a key for a new room.
     var newReportKey = this.db.ref('reports').push().key;
-    // Write the new room's data simultaneously in the compnay list and the user's companies list.
+    // Write the new room's data simultaneously in the compnay list and the user's businesses list.
     var updates = {};
-    // updates['/companies/' + companyID + '/buildings/' + buildingID + '/floors/' + floorID + '/rooms/' + roomID + '/reports/' + reportTitle] = newReportKey;
+    // updates['/businesses/' + businessID + '/buildings/' + buildingID + '/floors/' + floorID + '/rooms/' + roomID + '/reports/' + reportTitle] = newReportKey;
     updates['/reports/' + newReportKey] = reportData;
     updates['/users/' + reporter.ownerID + '/reports/' + reportTitle] = newReportKey;
 
-    console.log(companyID, buildingID, floorID, roomID, reportTitle, reporter);
+    console.log(businessID, buildingID, floorID, roomID, reportTitle, reporter);
     this.analytics.logEvent("Creating A New Report");
     this.db.ref().update(updates);
     return newReportKey;

@@ -6,13 +6,13 @@ import { withFirebase } from '../Firebase';
 
 // import AddressForm from '../AddressForm';
 
-class CompanyForm extends Component {
+class BusinessForm extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      companyTitle: '',
-      companyAddress: '',
+      businessTitle: '',
+      businessAddress: '',
     };
   }
 
@@ -20,54 +20,54 @@ class CompanyForm extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  onCreateCompany = () => {
+  onCreateBusiness = () => {
     let ownerName = this.props.authUser.username;
     let ownerID = this.props.authUser.uid;
 
-    var companyData = {
-      companyTitle: this.state.companyTitle,
-      companyAddress: this.state.companyAddress,
+    var businessData = {
+      businessTitle: this.state.businessTitle,
+      businessAddress: this.state.businessAddress,
       owner: { ownerName, ownerID },
       createdAt: this.props.firebase.serverValue.TIMESTAMP,
     };
 
-    let companyID = this.props.firebase.createCompany(companyData);
-    console.log(companyID);
+    let businessID = this.props.firebase.createBusiness(businessData);
+    console.log(businessID);
     this.setState({
-      companyTitle: '',
-      companyAddress: '',
+      businessTitle: '',
+      businessAddress: '',
     });
   };
 
   render() {
-    const { companyTitle, companyAddress } = this.state;
+    const { businessTitle, businessAddress } = this.state;
 
     return (
       <div className="add-padding-bottom text-center">
-        <h1>Create A Company!</h1>
+        <h1>Create A Business!</h1>
         <form>
           <input
             className="col-10 form-input"
             type="text"
-            placeholder="Name Your Company!"
-            value={companyTitle}
-            name="companyTitle"
+            placeholder="Name Your Business!"
+            value={businessTitle}
+            name="businessTitle"
             onChange={this.onChange}
           />
           <input
             className="col-10 form-input"
             type="text"
             placeholder="Where does it live?"
-            value={companyAddress}
-            name="companyAddress"
+            value={businessAddress}
+            name="businessAddress"
             onChange={this.onChange}
           />
 
-          {/* <AddressForm parentCallBack={this.onChangeCompanyAddress} /> */}
+          {/* <AddressForm parentCallBack={this.onChangeBusinessAddress} /> */}
         </form>
 
-        <button className="btn btn-primary" type="submit" onClick={this.onCreateCompany}>
-          <Link to={BUSINESSES}>click me to send back</Link>
+        <button className="btn btn-primary" type="submit" onClick={this.onCreateBusiness}>
+          <Link to={BUSINESSES}>Submit</Link>
         </button>
 
       </div>
@@ -75,4 +75,4 @@ class CompanyForm extends Component {
   }
 }
 
-export default withFirebase(CompanyForm);
+export default withFirebase(BusinessForm);

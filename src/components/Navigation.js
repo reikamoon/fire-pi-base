@@ -28,15 +28,17 @@ const Navigation = () => (
                 </Link>
                 <Link
                   className="nav-item nav-link"
-                  id="nav-home-tab"
+                  id="nav-buildings-tab"
                   data-toggle="tab"
                   role="tab"
-                  aria-controls="nav-home"
+                  aria-controls="nav-buildings"
                   aria-selected="false"
-                  to={ROUTES.PI_PURCHASE}
+                  to={ROUTES.BUSINESSES}
                 >
-                  Pi-Test Network
+                  Business
                 </Link>
+                {/* {!!authUser.business_id && ( DO Something )} */}
+
                 <Link
                   className="nav-item nav-link"
                   id="nav-account-tab"
@@ -48,25 +50,6 @@ const Navigation = () => (
                 >
                   Account
                 </Link>
-
-                {!!authUser.company_id && (
-                  <Link
-                    className="nav-item nav-link"
-                    id="nav-buildings-tab"
-                    data-toggle="tab"
-                    role="tab"
-                    aria-controls="nav-buildings"
-                    aria-selected="false"
-                    to={{
-                      pathname: `${ROUTES.BUSINESSES}`
-                      // pathname: `${ROUTES.BUSINESSES}/${authUser.company_id}`,
-                      // state: { company },
-                    }}
-                  >
-                    Company
-                  </Link>
-                )}
-
                 {!!authUser.roles.ADMIN && (
                   <Link
                     className="nav-item nav-link"

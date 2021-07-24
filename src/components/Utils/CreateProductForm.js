@@ -14,16 +14,10 @@ class ReportForm extends Component {
       upload: null,
       progress: 0,
 
-
-      companyID: '',
-      buildingID: '',
-      floorID: '',
-      roomID: '',
-
-      reportTitle: '',
-      reportMessage: '',
-      reportStatus: 'OPEN',
-      reportServiceType: '',
+      businessID: '',
+      Title: '',
+      Message: '',
+      Status: 'OPEN',
 
       reportImageName: '',
       reportImageURL: '',
@@ -35,14 +29,13 @@ class ReportForm extends Component {
     let ownerName = this.props.authUser.username;
     let ownerID = this.props.authUser.uid;
 
-    let { companyID, buildingID, floorID, roomID } = this.state;
+    let { businessID, buildingID, floorID, roomID } = this.state;
     let { reportTitle, reportMessage, reportStatus, reportServiceType, reportImageName, reportImageURL } = this.state;
-
 
     var reportData = {
       reporter: { ownerName, ownerID },
       location: {
-        companyID,
+        businessID,
         buildingID,
         floorID,
         roomID,
@@ -70,7 +63,7 @@ class ReportForm extends Component {
   onAutoFill = () => {
     this.setState({
       isBlocking: true,
-      companyID: '-MNIVFlXAdfjwAIEslMH',
+      businessID: '-MNIVFlXAdfjwAIEslMH',
       buildingID: '-MNIWgqfPJFOqVVPFLCA',
       floorID: '-MNIaKm56aa5l5mHaV5-',
       roomID: '-MNIkOqcBsUhDz2IhflB',
@@ -111,7 +104,7 @@ class ReportForm extends Component {
   render() {
     const { isBlocking, progress } = this.state;
     const {
-      companyID,
+      businessID,
       buildingID,
       floorID,
       roomID,
@@ -130,15 +123,15 @@ class ReportForm extends Component {
             <input
               className="form-input col-5"
               type="text"
-              placeholder="Company ID"
-              name="companyID"
-              value={companyID}
+              placeholder="Business ID"
+              name="businessID"
+              value={businessID}
               onChange={this.onChange}
             />
             <input
               className="form-input col-5"
               type="text"
-              placeholder="Building ID"
+              placeholder="Product ID"
               name="buildingID"
               value={buildingID}
               onChange={this.onChange}
