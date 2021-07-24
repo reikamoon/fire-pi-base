@@ -44,10 +44,10 @@ const Navigation = () => (
                 
                 <Link
                   className="nav-item nav-link"
-                  id="nav-buildings-tab"
+                  id="nav-products-tab"
                   data-toggle="tab"
                   role="tab"
-                  aria-controls="nav-buildings"
+                  aria-controls="nav-products"
                   aria-selected="false"
                   to={ROUTES.BUSINESSES}
                 >

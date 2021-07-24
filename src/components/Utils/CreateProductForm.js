@@ -4,8 +4,7 @@ import { Link, Prompt } from 'react-router-dom';
 import { PRODUCTS } from '../../routes';
 import { withFirebase } from '../Firebase';
 
-
-class ReportForm extends Component {
+class ProductForm extends Component {
   constructor(props) {
     super(props);
 
@@ -16,40 +15,37 @@ class ReportForm extends Component {
 
       businessID: '',
       Title: '',
-      Message: '',
+      Price: 0.00,
+      Description: '',
       Status: 'OPEN',
 
-      reportImageName: '',
-      reportImageURL: '',
+      productImageName: '',
+      productImageURL: '',
     };
     this.state = this.initialState;
   }
 
-  onCreateReport = () => {
+  onCreateProduct = () => {
     let ownerName = this.props.authUser.username;
     let ownerID = this.props.authUser.uid;
 
-    let { businessID, buildingID, floorID, roomID } = this.state;
-    let { reportTitle, reportMessage, reportStatus, reportServiceType, reportImageName, reportImageURL } = this.state;
+    // let { businessID, productID, floorID, roomID } = this.state;
+    // let { productTitle, productDescription, productStatus, productServiceType, productImageName, productImageURL } = this.state;
+    let { productTitle, productDescription, productPrice, productServiceType, productImageName, productImageURL } = this.state;
 
-    var reportData = {
-      reporter: { ownerName, ownerID },
-      location: {
-        businessID,
-        buildingID,
-        floorID,
-        roomID,
-      },
-      image: { reportImageName, reportImageURL },
-      reportTitle,
-      reportMessage,
-      reportStatus,
-      reportServiceType,
+    var productData = {
+      seller: { ownerName, ownerID },
+      image: { productImageName, productImageURL },
+      productTitle,
+      productPrice,
+      productDescription,
+      // productStatus,
+      productServiceType,
       createdAt: this.props.firebase.serverValue.TIMESTAMP,
     }
 
-    let reportID = this.props.firebase.createReport(reportData);
-    console.log(reportID);
+    let productID = this.props.firebase.createProduct(productData);
+    console.log(productID);
     this.setState(this.initialState);
   };
 
@@ -60,15 +56,15 @@ class ReportForm extends Component {
     });
   };
 
-  onAutoFill = () => {
-    this.setState({
-      isBlocking: true,
-      businessID: '-MNIVFlXAdfjwAIEslMH',
-      buildingID: '-MNIWgqfPJFOqVVPFLCA',
-      floorID: '-MNIaKm56aa5l5mHaV5-',
-      roomID: '-MNIkOqcBsUhDz2IhflB',
-    });
-  };
+  // onAutoFill = () => {
+  //   this.setState({
+  //     isBlocking: true,
+  //     businessID: '-MNIVFlXAdfjwAIEslMH',
+  //     productID: '-MNIWgqfPJFOqVVPFLCA',
+  //     floorID: '-MNIaKm56aa5l5mHaV5-',
+  //     roomID: '-MNIkOqcBsUhDz2IhflB',
+  //   });
+  // };
 
 
   handleChange = (e) => {
@@ -104,22 +100,23 @@ class ReportForm extends Component {
   render() {
     const { isBlocking, progress } = this.state;
     const {
-      businessID,
-      buildingID,
-      floorID,
-      roomID,
+      // businessID,
+      // productID,
+      // floorID,
+      // roomID,
 
-      reportTitle,
-      reportMessage,
-      reportServiceType,
+      productTitle,
+      productPrice,
+      productDescription,
+      productServiceType,
     } = this.state;
 
     return (
       <div className=" text-center">
         <hr />
-        <h2>Create A Report!</h2>
+        <h2>Create A Product!</h2>
         <form>
-          <div className="form-row">
+          {/* <div className="form-row">
             <input
               className="form-input col-5"
               type="text"
@@ -132,8 +129,8 @@ class ReportForm extends Component {
               className="form-input col-5"
               type="text"
               placeholder="Product ID"
-              name="buildingID"
-              value={buildingID}
+              name="productID"
+              value={productID}
               onChange={this.onChange}
             />
           </div>
@@ -160,38 +157,43 @@ class ReportForm extends Component {
             <div className="btn btn-primary form-input" onClick={this.onAutoFill}>
               Auto Fill Location
             </div>
-          }
+          } */}
 
           <div className="form-row">
             <input
               className="form-input col-10"
               type="text"
-              placeholder="Report Title"
-              name="reportTitle"
-              value={reportTitle}
+              placeholder="Product Title"
+              name="productTitle"
+              value={productTitle}
               onChange={this.onChange}
             />
+            <input
+            className="form-input col-10"
+            type="number"
+            placeholder="Product Price"
+            name="productPrice"
+            value={productPrice}
+            onChange={this.onChange}
+          />
           </div>
 
           <textarea
             rows="3"
             className="form-input col-12"
             type="text"
-            placeholder="Reason For Report"
-            name="reportMessage"
-            value={reportMessage}
+            placeholder="Product Description"
+            name="productDescription"
+            value={productDescription}
             onChange={this.onChange}
           />
 
-          <select className="form-control" name="reportServiceType" value={reportServiceType} onChange={this.onChange}>
-            <option value="" disabled>
-              Select a Service
-            </option>
-            <option value="MAINTENANCE">Maintenance / Repair</option>
-            <option value="HAZARD">Hazard Report</option>
-            <option value="SERVICE">Service Report</option>
+          <select className="form-control" name="productServiceType" value={productServiceType} onChange={this.onChange}>
+            <option value="">Select a Service</option>
+            <option value="CATEGORY 1">CATEGORY 1</option>
+            <option value="CATEGORY 2">CATEGORY 2</option>
+            <option value="CATEGORY 3">CATEGORY 3</option>
           </select>
-
 
           <input className="file-uploader" type="file" onChange={this.handleChange} />
 
@@ -204,12 +206,12 @@ class ReportForm extends Component {
         <Prompt when={isBlocking} message={(location) => `Are you sure you want to go to ${location.pathname}`} />
         {/* <p>Blocking? {isBlocking ? 'Yes, click a link or the back button' : 'Nope'}</p> */}
 
-        <button className="btn btn-primary" type="submit" onClick={this.onCreateReport}>
-          <Link to={PRODUCTS}>Submit Report</Link>
+        <button className="btn btn-primary" type="submit" onClick={this.onCreateProduct}>
+          <Link to={PRODUCTS}>Submit Product</Link>
         </button>
       </div>
     );
   }
 }
 
-export default withFirebase(ReportForm);
+export default withFirebase(ProductForm);

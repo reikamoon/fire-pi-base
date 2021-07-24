@@ -142,33 +142,63 @@ class Firebase {
     return newBusinessKey;
   };
 
-  // *** Report API ***
-  report = (uid) => {
-    this.analytics.logEvent("Referencing A Reports's Data");
-    return this.db.ref(`reports/${uid}`);
+  // *** Product API ***
+  product = (uid) => {
+    this.analytics.logEvent("Referencing A Products's Data");
+    return this.db.ref(`products/${uid}`);
   };
-  reports = () => {
-    this.analytics.logEvent("Referencing Reports List");
-    return this.db.ref('reports');
+  products = () => {
+    this.analytics.logEvent("Referencing Products List");
+    return this.db.ref('products');
   };
 
-  createReport = (reportData) => {
-    let { location, reportTitle, reporter } = reportData;
-    let { businessID, buildingID, floorID, roomID } = location;
+  createProduct = (productData) => {
+    let { productTitle, seller } = productData;
+    // let { location, productTitle, seller } = productData;
+    // let { businessID, productID, floorID, roomID } = location;
 
     // Get a key for a new room.
-    var newReportKey = this.db.ref('reports').push().key;
+    var newProductKey = this.db.ref('products').push().key;
     // Write the new room's data simultaneously in the compnay list and the user's businesses list.
     var updates = {};
-    // updates['/businesses/' + businessID + '/buildings/' + buildingID + '/floors/' + floorID + '/rooms/' + roomID + '/reports/' + reportTitle] = newReportKey;
-    updates['/reports/' + newReportKey] = reportData;
-    updates['/users/' + reporter.ownerID + '/reports/' + reportTitle] = newReportKey;
+    // updates['/businesses/' + businessID + '/products/' + productID + '/floors/' + floorID + '/rooms/' + roomID + '/products/' + productTitle] = newProductKey;
+    updates['/products/' + newProductKey] = productData;
+    updates['/users/' + seller.ownerID + '/products/' + productTitle] = newProductKey;
 
-    console.log(businessID, buildingID, floorID, roomID, reportTitle, reporter);
-    this.analytics.logEvent("Creating A New Report");
+    // console.log(businessID, productID, floorID, roomID, productTitle, producter);
+    console.log(productTitle, seller);
+    this.analytics.logEvent("Creating A New Product");
     this.db.ref().update(updates);
-    return newReportKey;
+    return newProductKey;
   };
+
+  // // *** Report API ***
+  // report = (uid) => {
+  //   this.analytics.logEvent("Referencing A Reports's Data");
+  //   return this.db.ref(`reports/${uid}`);
+  // };
+  // reports = () => {
+  //   this.analytics.logEvent("Referencing Reports List");
+  //   return this.db.ref('reports');
+  // };
+
+  // createReport = (reportData) => {
+  //   let { location, reportTitle, reporter } = reportData;
+  //   let { businessID, productID, floorID, roomID } = location;
+
+  //   // Get a key for a new room.
+  //   var newReportKey = this.db.ref('reports').push().key;
+  //   // Write the new room's data simultaneously in the compnay list and the user's businesses list.
+  //   var updates = {};
+  //   // updates['/businesses/' + businessID + '/products/' + productID + '/floors/' + floorID + '/rooms/' + roomID + '/reports/' + reportTitle] = newReportKey;
+  //   updates['/reports/' + newReportKey] = reportData;
+  //   updates['/users/' + reporter.ownerID + '/reports/' + reportTitle] = newReportKey;
+
+  //   console.log(businessID, productID, floorID, roomID, reportTitle, reporter);
+  //   this.analytics.logEvent("Creating A New Report");
+  //   this.db.ref().update(updates);
+  //   return newReportKey;
+  // };
 }
 
 export default Firebase;

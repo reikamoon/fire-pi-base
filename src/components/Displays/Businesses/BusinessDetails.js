@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 import { withFirebase } from '../../Firebase';
 import { AuthUserContext } from '../../Session';
 import * as ROUTES from '../../../routes';
+import { ProductList } from '../Products';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 class BusinessDetail extends Component {
   constructor(props) {
@@ -131,9 +131,9 @@ class BusinessDetail extends Component {
                   </p>
                 )}
                 <br />
-                {business.buildingList && (
+                {business.productList && (
                   <p>
-                    <strong>Products List:</strong> {business.buildingsList}
+                    <strong>Products List:</strong> {business.productList}
                   </p>
                 )}
               </div>
@@ -185,19 +185,22 @@ class BusinessDetail extends Component {
               </div>
             )}
 
+            <h1>Products:</h1>
+            <ProductList />
+
             {/* Navigation */}
-            {/* <div className="row">
+            <div className="row">
               <div className="ml-3 mr-2">
                 <Link to={ROUTES.BUSINESSES}>
                   <button className="btn btn-secondary">Back</button>
                 </Link>
               </div>
-              <div className="mr-2">
+              {/* <div className="mr-2">
                 <Link to={{ pathname: `${ROUTES.PRODUCTS}`, state: business }}>
                   <button className="btn btn-success">Products List</button>
                 </Link>
-              </div>
-            </div> */}
+              </div> */}
+            </div>
           </div>
         )}
       </AuthUserContext.Consumer>
