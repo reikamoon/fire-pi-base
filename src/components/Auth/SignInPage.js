@@ -5,7 +5,7 @@ import { compose } from 'recompose';
 import { SignUpLink } from './SignUpPage';
 import { PasswordForgetLink } from './PasswordForgetPage';
 import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../routes';
+import * as ROUTES from '../routes';
 import { faFacebookF, faGoogle, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

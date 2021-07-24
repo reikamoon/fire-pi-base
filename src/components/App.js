@@ -1,7 +1,7 @@
 import React from 'react';
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { AuthUserContext, withAuthentication } from './Session';
-import * as ROUTES from '../routes';
+import * as ROUTES from './routes';
 import Navigation from './Navigation';
 import PromptSaveBookmark from './Utils/PromptSaveBookmark';
 

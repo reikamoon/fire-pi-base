@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { HOME } from "../../routes";
+import { HOME } from "../routes";
 
 class NotFoundPage extends Component {
   render() {

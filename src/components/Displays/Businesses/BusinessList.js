@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { AuthUserContext } from '../../Session';
 import { withFirebase } from '../../Firebase';
-import * as ROUTES from '../../../routes';
+import * as ROUTES from '../../routes';
 
 class BusinessList extends Component {
   constructor(props) {

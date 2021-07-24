@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { BUSINESSES } from '../../routes';
+import { BUSINESSES } from '../routes';
 
 import { withFirebase } from '../Firebase';
 

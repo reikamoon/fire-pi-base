@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { AuthUserContext } from './Session';
-import * as ROUTES from '../routes';
-import { faHome, faShoppingCart, faCompass } from '@fortawesome/free-solid-svg-icons';
+import * as ROUTES from './routes';
+import { faShoppingCart, faCompass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { compose } from 'recompose';
 
-import * as ROUTES from '../../../routes';
+import * as ROUTES from '../../routes';
 import { AuthUserContext, withAuthorization, withEmailVerification } from '../../Session';
 import { CreateBusinessForm } from '../../Utils';
 import { BusinessList, BusinessDetails } from './index';

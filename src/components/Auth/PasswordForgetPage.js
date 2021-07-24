@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../routes';
+import * as ROUTES from '../routes';
 
 import Logo from '../../images/quest-pi-transparent-vector.png';
 

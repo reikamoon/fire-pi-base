@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, Prompt } from 'react-router-dom';
 
-import { PRODUCTS } from '../../routes';
+import { PRODUCTS } from '../routes';
 import { withFirebase } from '../Firebase';
 
 class ProductForm extends Component {

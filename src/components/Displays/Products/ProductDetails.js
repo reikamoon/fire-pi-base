@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { withFirebase } from '../../Firebase';
 import { AuthUserContext } from '../../Session';
-import * as ROUTES from '../../../routes';
+import * as ROUTES from '../../routes';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';

@@ -4,7 +4,7 @@ import { compose } from 'recompose';
 
 import { SignInLink } from './SignInPage';
 import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../routes';
+import * as ROUTES from '../routes';
 
 import Logo from '../../images/quest-pi-transparent-vector.png';
 
