@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { AuthUserContext } from './Session';
 import * as ROUTES from '../routes';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faShoppingCart, faCompass } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -24,21 +24,10 @@ const Navigation = () => (
                   aria-selected="false"
                   to={ROUTES.HOME}
                 >
-                  <FontAwesomeIcon icon={faHome} />
+                  {/* <FontAwesomeIcon icon={faHome} /> */}
+                  <FontAwesomeIcon icon={faShoppingCart} /> Shop Online
                 </Link>
-                <Link
-                  className="nav-item nav-link"
-                  id="nav-buildings-tab"
-                  data-toggle="tab"
-                  role="tab"
-                  aria-controls="nav-buildings"
-                  aria-selected="false"
-                  to={ROUTES.BUSINESSES}
-                >
-                  Business
-                </Link>
-                {/* {!!authUser.business_id && ( DO Something )} */}
-
+                
                 <Link
                   className="nav-item nav-link"
                   id="nav-account-tab"
@@ -48,8 +37,25 @@ const Navigation = () => (
                   aria-selected="false"
                   to={ROUTES.ACCOUNT}
                 >
-                  Account
+                  Manage Your Account
+                  <br /> & <br />
+                  Set Up A Free Store
                 </Link>
+                
+                <Link
+                  className="nav-item nav-link"
+                  id="nav-buildings-tab"
+                  data-toggle="tab"
+                  role="tab"
+                  aria-controls="nav-buildings"
+                  aria-selected="false"
+                  to={ROUTES.BUSINESSES}
+                >
+                  <FontAwesomeIcon icon={faCompass} /> Find Pi Shops Near You
+                </Link>
+                {/* {!!authUser.business_id && ( DO Something )} */}
+
+                {/* 
                 {!!authUser.roles.ADMIN && (
                   <Link
                     className="nav-item nav-link"
@@ -62,7 +68,7 @@ const Navigation = () => (
                   >
                     Admin
                   </Link>
-                )}
+                )} */}
               </div>
             </nav>
           </div>
