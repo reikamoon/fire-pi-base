@@ -5,7 +5,7 @@
 You can contribute to Quest in various ways, including:
 
 - [Reporting bugs or issues](https://github.com/QuestQuestPi/Backend/issues/new) on GitHub. Please make sure to include fill in all the details in the issue template to make sure the issue can be addressed as quickly as possible.
-<!-- - [Submitting improvements to the documentation](). Updates, enhancements, new guides, spelling fixes... -->
+- [Submitting improvements to the documentation](). Updates, enhancements, new guides, spelling fixes...
 <!-- - Helping other people on the [forums](). -->
 - Looking at existing [issues](https://github.com/QuestQuestPi/Backend/issues) and adding more information, particularly helping to reproduce the issues.
 - [Submitting a pull request](https://github.com/QuestQuestPi/Backend/blob/master/CONTRIBUTING.md#submitting-a-pull-request) with a bug fix or an improvement.
@@ -60,7 +60,7 @@ yarn run publish --canary
 
 ---
 
-<!-- ## Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
@@ -80,14 +80,14 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
-You will also see any lint errors in the console. -->
+You will also see any lint errors in the console.
 
-<!-- 
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+<!-- 
 ### `yarn build`
 
 Builds the app for production to the `build` folder.\
