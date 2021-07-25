@@ -85,6 +85,8 @@ Please reffer to our [Code of Conduct]() & [Contributing Instructions](). Anyone
 
 ## :book: EXTRA RESOURCES/Acknowledgments :pray:
 
+- [javascript-testing-best-practices](https://github.com/goldbergyoni/javascript-testing-best-practices)
+
 ### :memo: What is SocialChain / The Pi Network?
 
 - [Website](https://minepi.com/)
