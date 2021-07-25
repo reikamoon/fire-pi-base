@@ -13,6 +13,11 @@ https://github.com/pi-apps/pi-platform-docs/issues/42#issuecomment-873444893
 https://github.com/pi-apps/pi-platform-docs/issues/42#issuecomment-873455289
 https://github.com/pi-apps/pi-platform-docs/issues/42#issuecomment-873680752
 
+https://github.com/gradosevic/pi-mock
+https://github.com/dannybutterfield1880/fire-pi-base
+
+See here an example of app: https://github.com/vidaniello/donatepi-app
+And here an example of server: https://github.com/vidaniello/donatepi-server
 
 ## The Pi Lifestyle
 
