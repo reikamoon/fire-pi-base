@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';  
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
 import { withFirebase } from '../Firebase';
 import * as ROUTES from '../routes';
 
